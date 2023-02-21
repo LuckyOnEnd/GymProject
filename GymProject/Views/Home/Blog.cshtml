@@ -1,0 +1,206 @@
+﻿@{ Layout = null;}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WSB GYM PROJECT</title>
+    
+    <link rel="stylesheet" href="~/css/blog.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__contacts">
+                    <a class="header__phone" href="#">+48 793 909 202 </a>
+                    <a class="header__email" href="#"> gym.gmail.com</a>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <a data-fancybox data-src="#modal" asp-controller="account" asp-action="login" class="header__btn">Logowanie</a>}
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a data-fancybox data-src="#modal" asp-controller="profile" asp-action="info" class="header__btn">PANEL KLIENTA</a>
+                        <a data-fancybox data-src="#modal" class="header__btn" asp-controller="Account" asp-action="Logout">LOGOUT</a>}
+                </div>
+            </div>
+        </div>
+        <div class="header__content">
+            <div class="container">
+                <div class="header__content-inner">
+                    <div class="header__logo">
+
+                    </div>
+                    <nav class="menu">
+                        <div class="header__btn-menu">
+                            <span class="icon-bars"></span>
+                        </div>
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Blog">BLOG</a></li>
+                            <li><a asp-controller="Home" asp-action="AboutUs">O NAS</a></li>
+                            <li><a asp-controller="Membership" asp-action="GetMembership">KUP KARNET </a></li>
+                            <li><a asp-controller="Contact" asp-action="ContactSend">KONTAKT</a></li>
+                            <li><a asp-controller="Home" asp-action="Index">STRONA GLÓWNA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section">
+        <div class="photos">
+            <div class="photos__col">
+                <div class="photos__item">
+                    <img class="photos__image" width="355" height="250" src="/img/blog1.jpg" alt="">
+                </div>
+                <div class="photos__item">
+                    <img class="photos__image" width="355" height="250" src="/img/blog2.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="photos__col">
+                <div class="photos__item">
+                    <img class="photos__image" width="355" height="250" src="/img/blog7.jpg" alt="">
+                </div>
+                <div class="photos__item">
+                    <img class="photos__image" width="355" height="250" src="/img/blog4.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="photos__col">
+                <div class="photos__item">
+                    <img class="photos__image" width="354" height="500" src="/img/blog5.jpg" alt="">
+                </div>
+
+            </div>
+
+
+            <div class="photos__col">
+                <div class="photos__item">
+                    <img class="photos__image" width="352" height="250" src="/img/blog6.jpg" alt="">
+                </div>
+                <div class="photos__item">
+                    <img class="photos__image" width="352" height="250" src="/img/blog3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container">
+
+            <div class="section__top">
+                <h3 class="section__suptitle">THE POWER</h3>
+                <h2 class="section__title"> jak zmotywować się do ćwiczeń i zdrowego żywienia</h2>
+                <div class="section__text">
+                    <p> <h4>• Motywacja w sporcie – dlaczego jest taka ważna? •</h4> </p>
+                    <p>Motywacja jest podstawą osiągnięć sportowych. Definiuje się ją jako chęć wydawania energii i gotowość do ciężkiej pracy pomimo zmęczenia, bólu lub nudy. Motywacja wpływa na wszystkie inne czynniki decydujące o sukcesie sportowym, takie jak dieta czy poziom zaangażowania w trening.</p>
+                    <p> Mówiąc najprościej, motywacja jest siłą napędową, która popycha Cię do działania. Dzięki niej zależy Ci na gotowaniu zdrowych posiłków i chodzeniu na treningi, choć najbardziej chciałbyś zostać w domu i leżeć pod kołdrą z Netflixem. Motywacja dotyczy wszystkich aspektów życia, ale przede wszystkim sportu. Sportowy styl życia wymaga wielu wyrzeczeń, które nie byłyby możliwe bez silnej motywacji. Bez motywacji nie byłbyś w stanie podjąć żadnego działania, ponieważ nie widziałbyś w tym sensu.</p>
+                    <br></br>
+                    <p><h4>• Jak się zmotywować się do pójścia na trening? •</h4></p>
+                    <p> &#186  Postaw sobie cel i określ, do kiedy chcesz go zrealizować. Warto ten cel przelać na papier i w punktach sobie wypisać szczegóły, w jaki sposób będziesz go realizować. Kartkę z celem powieś w widocznym miejscu, abyś codziennie miał(a) go na widoku.</p>
+                    <p> &#186  Jeżeli nie będzie chciało się Tobie pójść na trening, to spójrz na swoją kartkę i zastanów się dlaczego chcesz zrealizować swój cel? Wróć pamięcią do tego momentu, kiedy stawiałeś(łaś) sobie ten cel i jakie emocje Tobą kierowały.</p>
+                    <p> &#186  Przełam swoje "niechcenie", spakuj torbę z rzeczami sportowymi i po prostu wyjdź z domu. Jeżeli to zrobisz, to po treningu będziesz miał(a) podwójną satysfakcję (z udanego treningu oraz że pokonałeś swoje "niechcenie").</p>
+                    <p> &#186  Możesz poprosić trenera, koleżankę lub kolegę, żeby w takich momentach byli dla Ciebie wsparciem oraz dali Tobie dawkę motywacji, która Cię pobudzi do działania.</p>
+                    <p> &#186  Czytaj jak najwięcej literatury motywacyjnej, oglądaj filmiki motywacyjne oraz patrz na życie znanych sportowców, którzy osiągnęli duży sukces. Oni też musieli pokonać wszelkie pokusy, niejednokrotnie się przełamywać, kiedy mieli chwilę zwątpienia.</p>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <div class="about">
+        <div class="about__item">
+            <div class="about__img">
+                <img src="/img/blog11.jpg" width="343" height="250" alt="">
+
+            </div>
+        </div>
+        <div class="about__item">
+            <div class="about__img">
+                <img src="/img/blog12.jpg" width="343" height="250" alt="">
+
+            </div>
+        </div>
+        <div class="about__item">
+            <div class="about__img">
+                <img src="/img/blog13.jpg" width="343" height="250" alt="">
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <section class="section">
+        <div class="container">
+
+            <div class="section__top">
+                <h3 class="section__suptitle">THE POWER</h3>
+                <h2 class="section__title"> Zdrowe żywienie</h2>
+                <div class="section__text">
+                    <p> <h4>• Co to jest zdrowe żywienie?• </h4></p>
+                    <p>Aby odpowiedzieć sobie na pytanie, jak żywić się zdrowo, warto przede wszystkim zastanowić się nad tym, czym jest zdrowe żywienie. Najogólniej rzecz ujmując, jest to taki sposób odżywiania, który zapewnia zdrowe funkcjonowanie całemu ludzkiemu organizmowi, biorąc pod uwagę wszystkie jego funkcje i składniki odżywcze, których potrzebuje on do prawidłowego funkcjonowania.</p>
+                    <br></br>
+                    <p><h4>• Kilka ważnych zasad zdrowego żywienia •</h4></p>
+                    <p> &#186 Odżywiaj się regularnie</p>
+                    <p> &#186 Dbaj o różnorodność posiłków </p>
+                    <p> &#186 Unikaj nadmiernych ilości tłuszczu i cholesterolu</p>
+                    <p> &#186 Spożywaj dużo warzyw i owoców</p>
+                    <p> &#186 Pij wodę </p>
+                    <p> &#186 Unikaj nadmiaru soli</p>
+                    <p> &#186 Zachowaj umiar w spożywaniu alkoholu </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--7-->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__info">
+                        <div class="footer__title">
+                            <img src="/img/logo.png" width="90" height="90" alt="LOGO">
+                        </div>
+
+
+                        <ul class="footer__list">
+                            <li><a class="footer__phone" href="#">+48 793 909 202 </a></li>
+                            <li><a href="#">gym.gmail.com</a></li>
+                            <li><a class="footer__adress" href="#">Poznań, ul. Św. Czesława 99a</a></li>
+                        </ul>
+                    </div>
+                    <!-- <div class="footer__map">
+                      <iframe height="250px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.124391996489!2d30.364922015731644!3d50.457408279476354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cc919501b4ef%3A0x71a476f68f4c8246!2z0YPQuy4g0KTQtdC-0LTQvtGA0Ysg0J_Rg9GI0LjQvdC-0LksIDEzLCDQmtC40LXQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1555013165886!5m2!1sru!2sua" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="footer__copy">
+            <div class="container">
+                <div class="copy__text">
+                    2022 Yevheniia Okhrimenko Viacheslav Trus Marian Vadzitskyj
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

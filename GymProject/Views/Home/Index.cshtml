@@ -1,0 +1,320 @@
+﻿@model GymProject.Domain.ViewModels.Account.EmailViewModels
+
+@{ Layout = null;}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WSB GYM PROJECT</title>
+    <link rel="stylesheet" href="/css/mainCss.css" />
+</head>
+<body>
+    <header class="header">
+            <div class="header__top">
+                <div class="container">
+                    <div class="header__contacts">
+                        <a class="header__phone" href="#">+48 793 909 202 </a>
+                        <a class="header__email" href="#"> gym.gmail.com</a>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+            <a data-fancybox data-src="#modal" asp-controller="account" asp-action="login" class="header__btn">Logowanie</a>}
+                        @if (User.Identity.IsAuthenticated)
+                        {
+            <a data-fancybox data-src="#modal" asp-controller="profile" asp-action="info" class="header__btn">PANEL KLIENTA</a>
+                            <a data-fancybox data-src="#modal" class="header__btn" asp-controller="Account" asp-action="Logout">LOGOUT</a>}
+                    </div>
+                </div>
+            </div>
+            <div class="header__content">
+                <div class="container">
+                    <div class="header__content-inner">
+                        <div class="header__logo">
+
+                        </div>
+                        <nav class="menu">
+                            <div class="header__btn-menu">
+                                <span class="icon-bars"></span>
+                            </div>
+                            <ul>
+                                <li><a asp-controller="Home" asp-action="Blog">BLOG</a></li>
+                                <li><a asp-controller="Home" asp-action="AboutUs">O NAS</a></li>
+                                <li><a asp-controller="Membership" asp-action="GetMembership">KUP KARNET </a></li>
+                                <li><a asp-controller="Contact" asp-action="ContactSend">KONTAKT</a></li>
+                                <li><a asp-controller="Home" asp-action="Index">STRONA GLÓWNA</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <section class="slider">
+        <div class="container">
+            <div class="slider__inner">
+                <div class="slider__item">
+                    <div class="slider__item-content">
+                        <div class="slider__title">
+                            ZAJĘCIA GRUPOWE
+                        </div>
+                        <div class="slider__text">
+                            Ćwiczenia grupowe są idealną opcją dla osób, które dopiero zaczynają ćwiczyć, ponieważ mogą wypróbować różne rodzaje zajęć i zobaczyć, które pasują do nich najlepiej.
+                        </div>
+                        <a data-fancybox data-src="#modal" href="karnety.html" class="slider__btn default-btn">
+                            KUP KARNET
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="services__top">
+                <div class="services__title-box">
+                    <div class="services__title">
+                        WYBIERZ KARNET
+                    </div>
+
+                </div>
+                <div class="services__btn">
+                    <a href="karnety.html">
+                        Zobacz więcej
+                    </a>
+                </div>
+            </div>
+            <div class="services__items">
+                <div class="services__item">
+                    <img src="#" alt="">
+                    <div class="services__item-title">
+                        Karnet jednodniowy
+                    </div>
+                    <div class="services__item-text">
+                        wejście upoważniające do jednorazowego pobytu na terenie siłowni w czasie nieograniczonym w godzinach jej funkcjonowania oraz na jednorazowe wejście na zajęcia grupowe
+                    </div>
+                    <div class="services__item-btn">
+                        <a class="services__item-link" href="karnety.html">dowiedz się więcej</a>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                            Wybieram
+                        </a>
+                    </div>
+                </div>
+                <div class="services__item">
+                    <img src="" alt="">
+                    <div class="services__item-title">
+                        Karnet miesięczny
+                    </div>
+                    <div class="services__item-text">
+                        nieograniczony dostęp upoważniający do korzystania z siłowni w godzinach funkcjonowania Klubu przez okres jednego miesiąca liczony od dnia aktywacji karnetu
+                    </div>
+                    <div class="services__item-btn">
+                        <a class="services__item-link" href="karnety.html">dowiedz się więcej</a>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                            Wybieram
+                        </a>
+                    </div>
+                </div>
+                <div class="services__item">
+                    <img src="img./about-3.png" alt="">
+                    <div class="services__item-title">
+                        Karnet na 6 miesięcy
+                    </div>
+                    <div class="services__item-text">
+                        nieograniczony dostęp upoważniający do korzystania z siłowni w godzinach funkcjonowania Klubu przez okres 6 miesięcy liczony od dnia aktywacji karnetu
+                    </div>
+                    <div class="services__item-btn">
+                        <a class="services__item-link" href="karnety.html">dowiedz się więcej</a>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                            Wybieram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about">
+        <div class="container">
+            <div class="about__inner">
+                <div class="about__title">
+                    O NAS
+                </div>
+                <div class="about__text">
+                    Nasza siłownia to Twój drugi dom.
+                    Najlepsza atmosfera do treningu i sprzęt premium, motywują do osiągania więcej!
+                    Zespół profesjonalnych trenerów personalnych zawsze będzie pod ręką, aby osiągnąć Twój cel, wspierając lub pomagając zawodowo. Siłownia, strefa cardio, strefa wolnych ciężarów, sala rozgrzewkowa, studia grupowe.
+                </div>
+                <a href="o_nas.html" class="about__btn default-btn">
+                    dowiedz się więcej
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <form asp-controller="home" asp-action="ContactEmail">
+        <section class="form">
+            <div class="container">
+                <div class="form__inner">
+                    <div class="form__content">
+                        <div class="form__title-box">
+                            <div class="form__title">
+                                Wypróbuj bezplatny trening próbny
+                            </div>
+                            <div class="form__text">
+                                Sprawdź nas! Zgłoś się na trening próbny  ‒ oczywiście bezpłatnie i bez zobowiązań.
+                                Zdecyduj, czy chcesz odbyć trening próbny z trenerem, czy może wolisz zwiedzić Silowni na własną rękę.
+                            </div>
+                        </div>
+                        <div class="form__box">
+                            <form>
+                                <div class="form__box-inner">
+                                    <div class="form__box-left">
+                                        <label>
+                                            E-mail
+                                            <input type="text" asp-for="Email">
+                                        </label>
+                                        <label>
+                                            Telefon
+                                            <input type="text">
+                                        </label>
+                                        <label>
+                                            Imię Nazwisko
+                                            <input type="text" asp-for="Name">
+                                        </label>
+                                    </div>
+                                    <div class="form__box-right">
+                                        <label>
+                                            Komentarz
+                                            <textarea asp-for="Text"></textarea>
+                                        </label>
+                                        <button class="default-btn" type="submit">ZAPISZ SIĘ JUŻ DZIŚ</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+
+    <section class="advantages">
+        <div class="container">
+            <div class="advantages__inner">
+                <div class="advantages-item">
+                    <div class="advantages__title">
+                        PONAD 40 ZAJĘĆ GRUPOWYCH
+                    </div>
+                    <div class="advantages__text">
+                        U nas na pewno znajdziesz rodzaj fitnessu, który Ci się spodoba.
+                    </div>
+                </div>
+                <div class="advantages-item">
+                    <div class="advantages__title">
+                        Treningi dla całej rodziny
+                    </div>
+                    <div class="advantages__text">
+                        Nasza siłownia oferuje najszerszy zakres usług dla całej rodziny, a nawet dla małych dzieci.
+                    </div>
+                </div>
+                <div class="advantages-item">
+                    <div class="advantages__title">
+                        Zniżki dla stałych i nowych klientów
+                    </div>
+                    <div class="advantages__text">
+                        Oferujemy stały i przejrzysty system lojalnościowy dla różnych kategorii klientów. od 5 do 20%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--6-->
+    <section class="news">
+        <div class="container">
+            <div class="news__top">
+                <div class="news__title-box">
+                    <div class="news__title">
+                        POPULARNE ZALĘCIA
+                    </div>
+
+                </div>
+                <div class="news__btn">
+                    <a href="blog.html">
+                        zobacz więcej
+                    </a>
+                </div>
+            </div>
+            <div class="news__inner">
+                <div class="news__slider">
+                    <div class="news__slider-inner">
+                        <div class="news__slider-item">
+                            <div class="news__slider-title">
+                                Większa motywacja gwarantowana
+                            </div>
+                            <div class="news__slider-text">
+                                Dynamika grupy jest również ważna w kształtowaniu zdrowych nawyków. Poziom motywacji do zajęć znacznie wzrasta, gdy istnieje poczucie przynależności do grupy i wspólny cel.
+                                Dla wielu połączenie treningu  z zaspokajaniem potrzeb społecznych jest niezwykle ważnym elementem w motywacji do długotrwałych zajęć.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <a href="#" class="news__blog">
+                    <div class="news__images">
+                        <img src="/img/5.jpg" width="282" height="250" alt="">
+                    </div>
+                    <div class="news__blog-title">
+                        JOGA
+                    </div>
+                    <div class="news__blog-text">
+                        Chcesz zadbać o kondycję fizyczną, ale intensywne czy szybkie ćwiczenia nie są Twoją bajką? Przyjdź na jogę. To spokojne ćwiczenia połączone z technikami oddechowymi i relaksacyjnymi, które będą miały dobroczynny wpływ na ciało i umysł.
+                    </div>
+                </a>
+                <a href="#" class="news__blog">
+                    <div class="news__images">
+                        <img src="~/img/6.jpg" width="282" height="250" alt="">
+                    </div>
+                    <div class="news__blog-title">
+                        ZUMBA
+                    </div>
+                    <div class="news__blog-text">
+                        Zrzucanie kilogramów czy modelowanie sylwetki to niekoniecznie żmudny i nudny trening! Połącz przyjemne z pożytecznym na zumbie! To połączenie ćwiczeń i tańca przy skocznej, często latynoskiej muzyce.
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!--7-->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__info">
+                        <div class="footer__title">
+                            <img src="/img/logo.png" width="90" height="90" alt="LOGO">
+                        </div>
+
+
+                        <ul class="footer__list">
+                            <li><a class="footer__phone" href="#">+48 793 909 202 </a></li>
+                            <li><a href="#">gym.gmail.com</a></li>
+                            <li><a class="footer__adress" href="#">Poznań, ul. Św. Czesława 99a</a></li>
+                        </ul>
+                    </div>
+                    <!-- <div class="footer__map">
+                      <iframe height="250px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.124391996489!2d30.364922015731644!3d50.457408279476354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cc919501b4ef%3A0x71a476f68f4c8246!2z0YPQuy4g0KTQtdC-0LTQvtGA0Ysg0J_Rg9GI0LjQvdC-0LksIDEzLCDQmtC40LXQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1555013165886!5m2!1sru!2sua" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="footer__copy">
+            <div class="container">
+                <div class="copy__text">
+                    2022 Yevheniia Okhrimenko Viacheslav Trus Marian Vadzitskyj
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

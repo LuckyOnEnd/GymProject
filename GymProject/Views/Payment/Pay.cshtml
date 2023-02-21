@@ -1,0 +1,6 @@
+﻿@model decimal
+@{ Layout = null;}
+<form asp-action="Index" asp-controller="Cart"  method="POST">
+    <div>@Model</div>
+    <a class="btn btn-primary" href="/Cart/PaymentWithPayPal">Pay Now</a>
+</form>

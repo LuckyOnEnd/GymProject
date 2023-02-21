@@ -1,0 +1,60 @@
+﻿@model GymProject.Domain.ViewModels.Account.EmailViewModels
+<div class="container">
+
+    <div class="content">
+
+
+        <div class="left-side">
+            <div class="address details">
+                <div class="topic">ADRES</div>
+                <div class="text-one">m. Poznań</div>
+                <div class="text-two">ul. Św. Czesława 99a</div>
+            </div>
+            <div class="phone details">
+                <div class="topic">TELEFON</div>
+                <div class="text-one">+48 793 09 202</div>
+                <div class="text-two">+48 793 09 202</div>
+            </div>
+            <div class="email details">
+                <div class="topic">E-mail</div>
+                <div class="text-one">gym.gmail.com</div>
+                <div class="text-two">gym.admin.gmail.com</div>
+            </div>
+        </div>
+
+
+        <div class="right-side">
+            <div class="topic-text">THE POWER</div>
+            <p>
+                Zostaw swoje dane, a skontaktujemy się z Tobą
+            </p>
+
+
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" placeholder="Imię i nazwisko" asp-for="Name" />
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="E-mail" asp-for="Email" />
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Numer kontaktowy" asp-for="Numer" />
+                </div>
+                <div class="input-box message-box">
+                    <textarea placeholder="Wiadomość" asp-for="Text"></textarea>
+                </div>
+                <div class="button">
+
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+        <button asp-controller="Account" asp-action="Login">Wyślij wiadomość</button>}
+                    @if (User.Identity.IsAuthenticated)
+                    {
+        <button>Wyślij wiadomość</button>}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

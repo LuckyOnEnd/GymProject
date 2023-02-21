@@ -1,0 +1,250 @@
+﻿@{ Layout = null; }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>O nas</title>
+    <link rel="stylesheet" href="/css/style_onas.css">
+
+
+</head>
+
+<body>
+    <!--1-->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__contacts">
+                    <a class="header__phone" href="#">+48 793 909 202 </a>
+                    <a class="header__email" href="#"> gym.gmail.com</a>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+        <a data-fancybox data-src="#modal" asp-controller="account" asp-action="login" class="header__btn">Logowanie</a>}
+                    @if (User.Identity.IsAuthenticated)
+                    {
+        <a data-fancybox data-src="#modal" asp-controller="profile" asp-action="info" class="header__btn">PANEL KLIENTA</a>
+                        <a data-fancybox data-src="#modal" class="header__btn" asp-controller="Account" asp-action="Logout">LOGOUT</a>}
+                </div>
+            </div>
+        </div>
+        <div class="header__content">
+            <div class="container">
+                <div class="header__content-inner">
+                    <div class="header__logo">
+
+                    </div>
+                    <nav class="menu">
+                        <div class="header__btn-menu">
+                            <span class="icon-bars"></span>
+                        </div>
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Blog">BLOG</a></li>
+                            <li><a asp-controller="Home" asp-action="AboutUs">O NAS</a></li>
+                            <li><a asp-controller="Membership" asp-action="GetMembership">KUP KARNET </a></li>
+                            <li><a asp-controller="Contact" asp-action="ContactSend">KONTAKT</a></li>
+                            <li><a asp-controller="Home" asp-action="Index">STRONA GLÓWNA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--1-->
+    <section class="slider">
+        <div class="container">
+            <div class="slider__inner">
+                <div class="slider__item">
+                    <div class="slider__item-content">
+                        <div class="slider__title">
+                            O KLUBIE
+                        </div>
+                        <!-- <div class="slider__text">
+                           Ćwiczenia grupowe są idealną opcją dla osób, które dopiero zaczynają ćwiczyć, ponieważ mogą wypróbować różne rodzaje zajęć i zobaczyć, które pasują do nich najlepiej.
+                         </div>-->
+
+                    </div>
+                </div>
+
+
+                <!--2-->
+                <section class="section">
+                    <div class="container">
+
+                        <div class="section__top">
+                            <h3 class="section__suptitle">THE POWER</h3>
+                            <h2 class="section__title"> wyjątkowy klub fitness i siłownia</h2>
+                            <div class="section__text">
+                                <p> „The Power” – jedna z najlepszych siłowni w Poznaniu, stworzona z myślą o osobach, które od dawna poszukują idealnego miejsca na poprawę sylwetki i spędzenie pożytecznego, zdrowego czasu wolnego w gronie podobnie myślących osób!</p>
+
+                                <p> Idealne formy, brak zbędnych kilogramów, wesołość i pozytywne emocje - wszystko to jest możliwe, jeśli odwiedzasz nowoczesną siłownię. Dla gości naszego klubu zostały stworzone idealne warunki. Na powierzchni ponad 1000 metrów kwadratowych. każdy z was znajdzie osobistą strefę komfortu.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <div class="about">
+                    <div class="about__item">
+                        <div class="about__img">
+                            <img src="img/o_nas2.jpg" width="343" height="250" alt="">
+
+                        </div>
+                    </div>
+                    <div class="about__item">
+                        <div class="about__img">
+                            <img src="img/o_nas4.jpg" width="343" height="250" alt="">
+
+                        </div>
+                    </div>
+                    <div class="about__item">
+                        <div class="about__img">
+                            <img src="img/o_nas5.jpg" width="343" height="250" alt="">
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--3-->
+                <div class="statistics">
+                    <div class="container">
+                        <div class=" stat">
+
+
+                            <div class="stat__item">
+                                <div class="stat__count">30</div>
+                                <div class="stat__text">trenerów</div>
+                            </div>
+                            <div class="stat__item">
+                                <div class="stat__count">6</div>
+                                <div class="stat__text">rodzajów karnetów</div>
+                            </div>
+                            <div class="stat__item">
+                                <div class="stat__count">50</div>
+                                <div class="stat__text">
+                                    różnorodnych treningów
+                                    dla każdego
+                                </div>
+                            </div>
+                            <div class="stat__item">
+                                <div class="stat__count">1000</div>
+                                <div class="stat__text">zadowolonych klientów</div>
+                            </div>
+                            <div class="stat__item">
+                                <div class="stat__count">40</div>
+                                <div class="stat__text">dostępnych usług</div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--4-->
+                <section class="section2">
+                    <div class="container">
+                        <div class="section2__top">
+                            <h3 class="section2__suptitle">THE POWER</h3>
+                            <h2 class="section2__title"> dostępne zajęcia grupowe w naszym klubie</h2>
+                        </div>
+
+                        <div class="services">
+                            <div class="services__item">
+                                <img class="services__icon" src="" alt="">
+
+                                <div class="services__title"> SPECJALISTYCZNE </div>
+                                <div class="services__text">• BOKS</div>
+                                <div class="services__text">• KICKBOXING</div>
+                                <div class="services__text">• BOSU</div>
+                            </div>
+
+                            <div class="services__item">
+                                <img class="services__icon" src="" alt="">
+
+                                <div class="services__title"> BODY&MIND </div>
+                                <div class="services__text">	• PILATES</div>
+                                <div class="services__text">	• STRETCHING</div>
+                                <div class="services__text">	• JOGA</div>
+                                <div class="services__text">	• ZDROWY KRĘGOSŁUP</div>
+                            </div>
+
+
+                            <div class="services__item">
+                                <img class="services__icon" src="" alt="">
+
+                                <div class="services__title"> METABOLICZNE </div>
+                                <div class="services__text">	• FAT BURNING</div>
+                                <div class="services__text">	• INTERWAŁ</div>
+                                <div class="services__text">	• TABATA</div>
+
+
+                            </div>
+                        </div>
+
+                        <hr>
+
+
+                        <div class="services">
+                            <div class="services__item">
+                                <img class="services__icon" src="" alt="">
+
+
+                                <div class="services__title"> WYTRZYMAŁOŚCIOWE </div>
+                                <div class="services__text">	• TRAMPOLINY</div>
+                                <div class="services__text">	• STEP</div>
+                            </div>
+
+                            <div class="services__item">
+                                <img class="services__icon" src="" alt="">
+
+
+                                <div class="services__title"> WZMACNIAJĄCE </div>
+                                <div class="services__text">	• SZTANGI BRZUCH I STRETCH  </div>
+                                <div class="services__text">	• FULL BODY WORKOUT</div>
+                                <div class="services__text">	• BRZUCH I STRETCH</div>
+                                <div class="services__text">	• TRENING OBWODOWY</div>
+
+
+                            </div><div class="services__item">
+                                <img class="services__icon" src="" alt="">
+
+                                <div class="services__title"> TANECZNE </div>
+                                <div class="services__text">	• ZUMBA</div>
+                            </div>
+                        </div>
+
+                        <!--7-->
+                        <footer class="footer">
+                            <div class="footer__content">
+                                <div class="container">
+                                    <div class="footer__inner">
+                                        <div class="footer__info">
+                                            <div class="footer__title">
+                                                <img src="img/logo.png" width="90" height="90" alt="LOGO">
+                                            </div>
+
+
+                                            <ul class="footer__list">
+                                                <li><a class="footer__phone" href="#">+48 793 909 202 </a></li>
+                                                <li><a href="#">gym.gmail.com</a></li>
+                                                <li><a class="footer__adress" href="#">Poznań, ul. Św. Czesława 99a</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- <div class="footer__map">
+                                          <iframe height="250px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.124391996489!2d30.364922015731644!3d50.457408279476354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cc919501b4ef%3A0x71a476f68f4c8246!2z0YPQuy4g0KTQtdC-0LTQvtGA0Ysg0J_Rg9GI0LjQvdC-0LksIDEzLCDQmtC40LXQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1555013165886!5m2!1sru!2sua" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer__copy">
+                                <div class="container">
+                                    <div class="copy__text">
+                                        2022 Yevheniia Okhrimenko Viacheslav Trus Marian Vadzitskyj
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+</body>
+</html>    

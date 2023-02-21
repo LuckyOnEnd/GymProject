@@ -1,0 +1,16 @@
+﻿@model decimal
+@{ Layout = null;}
+<form asp-action="Index" asp-controller="Cart" method="POST">
+    <div id="pay-box">
+
+        <h1>Typ karnrtu: </h1>
+
+        <h2>Ważny do : </h2>
+        <h2> Cena : @Model</h2>
+
+
+
+        <a href="/Cart/PaymentWithPayPal" type="submit" class="btn btn-primary">Zaplłacić</a>
+    </div>
+    
+</form>

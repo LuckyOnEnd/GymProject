@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Braintree" Version="5.13.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="5.0.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GymProject.DAL\GymProject.DAL.csproj" />
+    <ProjectReference Include="..\GymProject.Domain\GymProject.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

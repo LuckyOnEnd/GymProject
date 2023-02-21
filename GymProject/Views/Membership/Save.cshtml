@@ -1,0 +1,62 @@
+﻿@model GymProject.Domain.ViewModels.Membership.MembershipViewModels
+@{
+    var textTitle = Model?.Id == 0 ? "Изменение данных" : "Добавление данных";
+}
+<form asp-controller="Membership" asp-action="Save" enctype="multipart/form-data" id="formSaveMember">
+    <input asp-for="Id" hidden />
+    <div asp-validation-summary="All"></div>
+    <div>
+        <div>
+            <label asp-for="@Model.Name"></label>
+            <input type="text" asp-for="@Model.Name">
+        </div>
+        
+        <div>
+            <label asp-for="@Model.Price"></label>
+            <input type="text" asp-for="@Model.Price" />
+        </div>
+    </div>
+    <div>
+        <div>
+            <label asp-for="@Model.Description"></label>
+            <textarea type="text" asp-for="@Model.Description"></textarea>
+        </div>
+    </div>
+    <div>
+        <div>
+            <label>Zdjęcie</label>
+            <input asp-for="@Model.Avatar" type="file">
+        </div>
+    </div>
+    <button>SUBMIT</button>
+</form>
+
+<script src="~/lib/select2/js/select2.full.min.js"></script>
+<script>
+   $('#memberTypeId').select2({
+      placeholder: "Wybierz typ",
+      minimumInputLength: 0,
+      allowClear: true,
+      ajax: {
+           type: "POST",
+           url: "@Url.Action("GetMemberships", "Membership")",
+           dataType: "json",
+           processResults: function (result) {
+               return {
+                   results: $.map(result, function (val, index) {
+                       return {
+                           id: index,
+                           text: val
+                       };
+                   }),
+               };
+           }
+       }
+   });
+</script>
+
+<style>
+    label {
+        color: black;
+    }
+</style>

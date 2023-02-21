@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WSB GYM PROJECT</title>
+    <link rel="stylesheet" href="~/css/karnety.css" />
+    <link rel="stylesheet" href="~/css/kontakt.css" />
+    <link rel="stylesheet" href="~/css/style_log.css" />
+    <link rel="stylesheet" href="~/css/style_onas.css" />
+    <link rel="stylesheet" href="~/css/blog.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/style_onas.css" />
+    <link rel="stylesheet" href="~/css/panel.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__contacts">
+                    <a class="header__phone" href="#">+48 793 909 202 </a>
+                    <a class="header__email" href="#"> gym.gmail.com</a>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <a data-fancybox data-src="#modal" asp-controller="account" asp-action="login" class="header__btn">Logowanie</a>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a data-fancybox data-src="#modal" asp-controller="profile" asp-action="info" class="header__btn">PANEL KLIENTA</a>
+                        <a data-fancybox data-src="#modal" class="header__btn" asp-controller="Account" asp-action="Logout">LOGOUT</a>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="header__content">
+            <div class="container">
+                <div class="header__content-inner">
+                    <div class="header__logo">
+
+                    </div>
+                    <nav class="menu">
+                        <div class="header__btn-menu">
+                            <span class="icon-bars"></span>
+                        </div>
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Blog">BLOG</a></li>
+                            <li><a asp-controller="Home" asp-action="AboutUs">O NAS</a></li>
+                            <li><a asp-controller="Membership" asp-action="GetMembership">KUP KARNET </a></li>
+                            <li><a asp-controller="Contact" asp-action="ContactSend">KONTAKT</a></li>
+                            <li><a asp-controller="Home" asp-action="Index">STRONA GLÓWNA</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @await RenderSectionAsync("pageScripts", required: false)
+</body>
+</html>

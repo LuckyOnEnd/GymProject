@@ -1,0 +1,262 @@
+body {
+    margin: 0;
+    background: linear-gradient(45deg, #f0f1f8, #cbcacb);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+body {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #5e5e5e;
+}
+
+header {
+    font-family: sans-serif;
+}
+
+.header__top {
+    background-color: #303030;
+}
+
+.header__btn {
+    float: right;
+    line-height: 36px;
+    color: #1b1b1b;
+    background-color: #8b2720;
+    padding: 5px 40px 4px 40px;
+    font-size: 16px;
+}
+
+.header__phone,
+.header__email {
+    color: #cbcacb;
+    letter-spacing: 0.25px;
+    line-height: 45px;
+}
+
+.header__phone {
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.header__content {
+    padding: 20px 0px 20px;
+}
+
+.header__content-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    color: #323232;
+    font-size: 16px;
+    line-height: 36px;
+    border: 1px solid transparent;
+    padding: 0px 16px;
+}
+
+    .menu a:hover {
+        border-color: #8b2720;
+    }
+
+.menu li + li {
+    padding-left: 10px;
+}
+
+
+
+
+.content {
+    display: flex; /* делаем колонки в ряд */
+    align-items: center; /* выравниваем по центру */
+    justify-content: space-between; /* колонки растянутся на всю ширину */
+    background: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+}
+
+/* Стили левой колонки */
+.left-side {
+    width: 25%; /* занимает 25% общей ширины */
+    height: 100%; /* растягиваем на всю высоту */
+    position: relative; /* позиционирование относительное (для ::before) */
+    display: flex;
+    flex-direction: column; /* внутри элементы располагаем в колонку */
+}
+
+    /* Стили разделительной линии между левой и правой колонкой */
+    .left-side::before {
+        content: ""; /* контент нам не нужен */
+        position: absolute; /* позиционируем относительно .left-side */
+        height: 70%; /* высота 70% от .left-side */
+        width: 2px; /* ширина 2px */
+        background: #afafb6;
+        right: -15px; /* позиционируем справа + отступ 15px (справа) */
+        top: 50%; /* выравниваем по центру */
+        transform: translateY(-50%); /* выравниваем по центру */
+    }
+
+/* Стили правой колонки */
+.right-side {
+    width: 75%; /* занимает 75% общей ширины */
+    margin-left: 75px;
+}
+
+/* Элементы левой колонки: адрес, телефон, email */
+.details {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Стили для заголовков левой колонки */
+.topic {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 7px; /* отступ снизу 7px */
+}
+
+/* Стили для текста левой колонки */
+.text-one,
+.text-two {
+    font-size: 14px;
+    color: #595959;
+}
+
+/* Заголовок правой колонки */
+.topic-text {
+    font-size: 23px;
+    font-weight: 600;
+    color: #8b2720;
+    margin-bottom: 10px;
+}
+
+/* Текст правой колонки */
+.right-side p {
+    margin-bottom: 20px;
+}
+
+/* Контейнер для input'ов формы */
+.input-box {
+    height: 50px; /* по сути задаем высоту input'а */
+    width: 100%; /* ширина на всю ширину правой колонки (с учетом padding) */
+    margin-bottom: 20px; /* отступаем снизу 20px */
+}
+
+    /* Стили для input и textarea (поле сообщение) */
+    .input-box input,
+    .input-box textarea {
+        height: 100%; /* растягиваем на всю высоту контейнера 50px */
+        width: 100%; /* растягиваем на всю ширину */
+        border: none; /* убираем внешние края */
+        border-radius: 5px; /* скругляем края */
+        background: #f0f1f8; /* задаем цвет фона */
+        padding: 0 20px; /* отступ справа и слева 20px */
+    }
+
+    /* Отдельно стилизуем поле сообщение */
+    .input-box textarea {
+        resize: none; /* чтобы нельзя было менять высоту */
+        padding: 20px;
+        font-family: sans-serif;
+    }
+
+/* Это контейнер для поля сообщение */
+.message-box {
+    min-height: 110px; /* минимальная высота 110px */
+}
+
+/* Стили для контейнера кнопки */
+.button {
+    display: inline-block; /* делаем блочно-строчный элемент */
+}
+
+    /* Стили для самой кнопки */
+    .button input[type="button"] {
+        color: #fff;
+        font-size: 18px;
+        background: #8b2720;
+        outline: none;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 7px;
+        transition: 0.2s; /* чтобы плавно менялся цвет при наведении (:hover) */
+    }
+
+        /* Меняем цвет фона при наведении на кнопку */
+        .button input[type="button"]:hover {
+            background: #1b1b1b;
+        }
+
+
+
+.footer__content {
+    background-color: #595959;
+    width: 110.8%;
+    max-width: 2000px;
+    margin: 50px 10px auto -153px;
+}
+
+.footer__title {
+    padding-left: 33px;
+    position: absolute;
+}
+
+
+.footer__list {
+    padding-top: 10px;
+}
+
+    .footer__list li {
+        margin-top: 10px;
+    }
+
+    .footer__list a {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.25px;
+        color: #fff;
+        font-weight: 400;
+        font-family: sans-serif;
+        padding-left: 33px;
+        position: relative;
+        padding-left: 150px;
+    }
+
+.footer__copy {
+    background-color: #303030;
+    text-align: center;
+    font-size: 12px;
+    line-height: 24px;
+    padding: 8px 0;
+    font-weight: 400;
+    font-family: sans-serif;
+}

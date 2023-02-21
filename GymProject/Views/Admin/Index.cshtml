@@ -1,0 +1,15 @@
+﻿@model IEnumerable<GymProject.Domain.ViewModels.User.UserViewModel>
+
+@{
+    Layout = null;
+}
+
+@foreach (var user in @Model)
+{
+    <div>@user.Name</div>
+    <div>@user.Surname</div>
+    <div>@user.Email</div>
+    <div>@user.IsPaid</div>
+    if(user.IsPaid == true) {<div>HELLO</div> }
+}
+<div>PIZDA</div>
